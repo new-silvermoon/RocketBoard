@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+     android:title="Theme"
+     android:key="theme"
+     android:entryValues="@array/color_values"
+     android:defaultValue="2"
+     android:entries="@array/color"/>
+
+    <ListPreference
+        android:title="Default Keyboard"
+        android:key="start"
+        android:entryValues="@array/start_values"
+        android:defaultValue="1"
+        android:entries="@array/start"/>
+
+    <SwitchPreference android:title="@string/caps"
+        android:key="caps"
+        android:defaultValue="true" />
+
+    <SwitchPreference android:title="Decency Sensor"
+        android:key="dec"
+        android:defaultValue="false"/>
+
+    <SwitchPreference android:title="@string/vib"
+        android:key="vib"
+        android:defaultValue="false" />
+
+    <SwitchPreference android:title="@string/borders"
+        android:key="bord"
+        android:defaultValue="false" />
+
+    <SwitchPreference android:title="@string/prediction"
+        android:key="pred"
+        android:defaultValue="false" />
+
+    <SwitchPreference android:title="Arrow keys on qwerty layout"
+        android:key="arr_qrt"
+        android:defaultValue="false" />
+
+    <SwitchPreference android:title="Number keys on qwerty layout"
+        android:key="nbr_qrt"
+        android:defaultValue="false" />
+
+
+</PreferenceScreen>
