@@ -5,28 +5,46 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.silvermoon.smartkeyboard.com.silvermoon.rocketboard.smartfeatures.AddUserAction">
+    tools:context="com.silvermoon.rocketboard.smartfeatures.AddUserAction">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:text="Select a key: "/>
+        android:text="Select a key: "
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"/>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spKey"></Spinner>
+        android:layout_marginLeft="10dp"
+        android:id="@+id/spKey"/>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Touch here to select an app"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:id="@+id/tvAppSelect"/>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnAdd"
-        android:text="Add action"/>
+        android:background="@drawable/button_shape"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:text="Add"/>
+
 
 
 </LinearLayout>

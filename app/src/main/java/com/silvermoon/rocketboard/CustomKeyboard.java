@@ -17,7 +17,7 @@ import android.util.AttributeSet;
 import android.view.inputmethod.InputMethodSubtype;
 import android.widget.PopupWindow;
 
-import com.silvermoon.smartkeyboard.R;
+
 
 import java.lang.reflect.Field;
 import java.util.List;

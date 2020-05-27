@@ -2,6 +2,11 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <Preference
+        android:title="Smart key settings"
+        android:key="prefSmartKey"
+        />
+
     <ListPreference
      android:title="Theme"
      android:key="theme"

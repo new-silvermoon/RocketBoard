@@ -13,13 +13,14 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.silvermoon.rocketboard.data.SmartKeyContract;
-import com.silvermoon.smartkeyboard.R;
+import com.silvermoon.rocketboard.R;
 
 public class UserActionList extends AppCompatActivity implements
 UserActionAdapter.OnItemClickListener,
@@ -31,22 +32,46 @@ UserActionAdapter.OnItemClickListener,
     private RecyclerView recyclerView;
     private static final String MODIFY_COMPLETE_BROADCAST ="com.silvermoon.smartkeyboard.INSERTION_COMPLETE_BROADCAST";
     private UpdateBroadcastReceiver updateBroadcastReceiver;
-
+    private FloatingActionButton fabMain, fabAction;
+    private Boolean isFabExpanded = false;
+    private CardView cvAction;
+    private TextView tvNoActions;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_action_list);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fabMain = findViewById(R.id.fabMain);
+        fabAction = findViewById(R.id.fabAction);
+        cvAction = findViewById(R.id.cvAction);
+        tvNoActions = findViewById(R.id.tvNoActions);
+        setTitle("User Actions list");
+
+
+        fabMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
+                if(isFabExpanded){
+                    fabAction.setVisibility(View.GONE);
+                    cvAction.setVisibility(View.GONE);
+                    isFabExpanded = false;
+
+                }
+                else{
+                    fabAction.setVisibility(View.VISIBLE);
+                    cvAction.setVisibility(View.VISIBLE);
+                    isFabExpanded = true;
+                }
+
+            }
+        });
+
+        fabAction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                isFabExpanded = false;
                 startActivity(new Intent(view.getContext(),AddUserAction.class));
 
             }
@@ -66,6 +91,13 @@ UserActionAdapter.OnItemClickListener,
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        fabAction.setVisibility(View.GONE);
+        cvAction.setVisibility(View.GONE);
+    }
+
+    @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         String [] projection = new String[]{SmartKeyContract.TABLE_USER_ACTION};
         int isAssigned = 1;
@@ -77,6 +109,15 @@ UserActionAdapter.OnItemClickListener,
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         cursor = data;
         userActionAdapter.swapCursor(data);
+        if(data.getCount() < 1){
+            tvNoActions.setVisibility(View.VISIBLE);
+
+
+        }
+        else{
+            tvNoActions.setVisibility(View.GONE);
+
+        }
 
     }
 

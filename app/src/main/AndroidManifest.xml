@@ -51,8 +51,8 @@
 
         <activity
             android:name="com.silvermoon.rocketboard.smartfeatures.UserActionList"
-            android:label="@string/title_activity_user_action_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_user_action_list"/>
+<!--            android:theme="@style/AppTheme.NoActionBar" />-->
         <activity android:name="com.silvermoon.rocketboard.smartfeatures.AddUserAction" />
 
         <service

@@ -12,7 +12,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.GestureDetector;
 
-import com.silvermoon.smartkeyboard.R;
+
 
 import java.util.ArrayList;
 import java.util.List;

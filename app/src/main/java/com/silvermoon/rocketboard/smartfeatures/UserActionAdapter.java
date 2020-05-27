@@ -3,6 +3,7 @@ package com.silvermoon.rocketboard.smartfeatures;
 import android.database.Cursor;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.silvermoon.rocketboard.data.UserAction;
-import com.silvermoon.smartkeyboard.R;
+import com.silvermoon.rocketboard.R;
 
 /**
  * Created by faith on 10/5/2017.
@@ -67,8 +68,8 @@ public class UserActionAdapter extends RecyclerView.Adapter<UserActionAdapter.Us
 
                 UserAction userAction = getItem(position);
 
-                holder.tvAppName.setText(userAction.packageName);
-                holder.tvKeyName.setText(userAction.keyName);
+                holder.tvAppName.setText(Html.fromHtml("<b>App: </b>"+ userAction.packageName));
+                holder.tvKeyName.setText(Html.fromHtml("<b>Key: </b>"+ userAction.keyName));
             }
             else{
                 holder.tvAppName.setText("No User actions");

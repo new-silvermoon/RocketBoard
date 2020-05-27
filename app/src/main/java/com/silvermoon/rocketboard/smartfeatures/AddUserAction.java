@@ -19,10 +19,11 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.silvermoon.rocketboard.R;
 import com.silvermoon.rocketboard.data.SmartKeyContract;
 import com.silvermoon.rocketboard.data.UserAction;
 import com.silvermoon.rocketboard.data.UserActionIntentService;
-import com.silvermoon.smartkeyboard.R;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,10 +52,11 @@ public class AddUserAction extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user_action);
 
+        setTitle("Add an action");
+
         spKey = (Spinner)findViewById(R.id.spKey);
         tvAppSelection = (TextView)findViewById(R.id.tvAppSelect);
         btnAdd = (Button)findViewById(R.id.btnAdd);
-
         tvAppSelection.setOnClickListener(this);
         btnAdd.setOnClickListener(this);
 

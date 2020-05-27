@@ -1,11 +1,11 @@
 package com.silvermoon.rocketboard;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import com.silvermoon.smartkeyboard.R;
 
-public class Preference extends ActionBarActivity {
+
+public class Preference extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

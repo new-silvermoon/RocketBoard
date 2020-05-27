@@ -4,4 +4,8 @@
     <dimen name="candidate_font_height">20sp</dimen>
     <dimen name="candidate_vertical_padding">16sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="cardCornerRadius">4dp</dimen>
+    <dimen name="cardElevation">4dp</dimen>
+    <dimen name="cardview_horizontal_padding">6dp</dimen>
+    <dimen name="cardview_vertical_padding">2dp</dimen>
 </resources>

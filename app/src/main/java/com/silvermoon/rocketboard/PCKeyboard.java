@@ -43,7 +43,7 @@ import android.view.textservice.TextServicesManager;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
-import com.silvermoon.smartkeyboard.R;
+
 import com.silvermoon.rocketboard.data.SmartKeyContract;
 import com.silvermoon.rocketboard.data.UserAction;
 
