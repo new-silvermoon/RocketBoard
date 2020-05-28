@@ -68,7 +68,7 @@ public class UserActionAdapter extends RecyclerView.Adapter<UserActionAdapter.Us
 
                 UserAction userAction = getItem(position);
 
-                holder.tvAppName.setText(Html.fromHtml("<b>App: </b>"+ userAction.packageName));
+                holder.tvAppName.setText(Html.fromHtml("<b>App: </b>"+ userAction.appName));
                 holder.tvKeyName.setText(Html.fromHtml("<b>Key: </b>"+ userAction.keyName));
             }
             else{

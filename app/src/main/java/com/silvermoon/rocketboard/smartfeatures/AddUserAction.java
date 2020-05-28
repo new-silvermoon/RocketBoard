@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.silvermoon.rocketboard.R;
 import com.silvermoon.rocketboard.data.SmartKeyContract;
@@ -37,7 +38,7 @@ public class AddUserAction extends AppCompatActivity implements View.OnClickList
     private List<String> lKeysList;
     private List<Long> lKeysIdList = new ArrayList<Long>();
     private Button btnAdd;
-    private String queryURI,selectedApp;
+    private String queryURI, selectedAppPkg, selectedAppName;
     private UserAction userAction;
     private static final String TAG = AddUserAction.class.getSimpleName();
     PackageManager packageManager;
@@ -54,9 +55,9 @@ public class AddUserAction extends AppCompatActivity implements View.OnClickList
 
         setTitle("Add an action");
 
-        spKey = (Spinner)findViewById(R.id.spKey);
-        tvAppSelection = (TextView)findViewById(R.id.tvAppSelect);
-        btnAdd = (Button)findViewById(R.id.btnAdd);
+        spKey = findViewById(R.id.spKey);
+        tvAppSelection = findViewById(R.id.tvAppSelect);
+        btnAdd = findViewById(R.id.btnAdd);
         tvAppSelection.setOnClickListener(this);
         btnAdd.setOnClickListener(this);
 
@@ -105,7 +106,7 @@ public class AddUserAction extends AppCompatActivity implements View.OnClickList
                 dialog.setTitle("Select an app ");
 
 
-                rvlistOfApps = (RecyclerView)dialog.findViewById(R.id.rvListOfApps);
+                rvlistOfApps = dialog.findViewById(R.id.rvListOfApps);
                 rLayoutManager = new LinearLayoutManager(view.getContext());
                 rvlistOfApps.setLayoutManager(rLayoutManager);
 
@@ -125,8 +126,9 @@ public class AddUserAction extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onItemClick(PackageInfo item) {
                         //Add code here
-                        selectedApp = item.packageName;
-                        tvAppSelection.setText(selectedApp);
+                        selectedAppPkg = item.packageName;
+                        selectedAppName = packageManager.getApplicationLabel(item.applicationInfo).toString();
+                        tvAppSelection.setText(selectedAppName);
                         dialog.dismiss();
 
 
@@ -138,13 +140,20 @@ public class AddUserAction extends AppCompatActivity implements View.OnClickList
 
                 break;
             case R.id.btnAdd:
+
+                if(tvAppSelection.getText().equals(getResources().getString(R.string.user_action_default_text))){
+                    Toast.makeText(this, "Please select an app.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 int position = (int) spKey.getSelectedItemId();
                 long id  = lKeysIdList.get(position);
                 Uri updateURI = ContentUris.withAppendedId(SmartKeyContract.CONTENT_URI,id);
 
                 ContentValues values = new ContentValues();
                 values.put(SmartKeyContract.UserActionColumns.isAssigned,"1");
-                values.put(SmartKeyContract.UserActionColumns.packageName,selectedApp);
+                values.put(SmartKeyContract.UserActionColumns.packageName, selectedAppPkg);
+                values.put(SmartKeyContract.UserActionColumns.appName,selectedAppName);
                 String [] selectionArgs = new String[]{String.valueOf(id)};
                 UserActionIntentService.updateUserAction(this,updateURI,values,selectionArgs);
                 finish();

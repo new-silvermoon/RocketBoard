@@ -28,7 +28,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Touch here to select an app"
+        android:text="@string/user_action_default_text"
         android:layout_marginLeft="10dp"
         android:textSize="20sp"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"

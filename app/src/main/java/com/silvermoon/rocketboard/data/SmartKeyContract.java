@@ -19,12 +19,14 @@ public class SmartKeyContract {
         public static final String keyId ="key_id";
         //Package name
         public static final String packageName = "package_name";
+        //App name
+        public static final String appName = "app_name";
         //Checks whether the key is already in use
         public static final String isAssigned = "isAssigned";
     }
 
      //Authority string for the content provider
-    public static final String CONTENT_AUTHORITY = "com.silvermoon.smartkeyboard";
+    public static final String CONTENT_AUTHORITY = "com.silvermoon.rocketboard";
     public static final String COUNT = "count";
     public static final int USERACTION =100;
     public static final int USERACTION_WITH_ID =101;

@@ -47,4 +47,5 @@
     </string-array>
     <string name="word_separators" translatable="false">\u0020.,;:!?\n()[]*&amp;@{}/&lt;&gt;_+=|&quot;</string>
     <string name="title_activity_user_action_list">UserActionList</string>
+    <string name="user_action_default_text">Touch here to select an app</string>
 </resources>

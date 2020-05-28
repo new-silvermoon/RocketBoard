@@ -71,11 +71,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         packageInfo = (PackageInfo)packageList.get(position);
         appIcon = packageManager.getApplicationIcon(packageInfo.applicationInfo);
         appName = packageManager.getApplicationLabel(packageInfo.applicationInfo).toString();
-        appIcon.setBounds(0,0,40,40);
+        appIcon.setBounds(0,0,90,90);
+
 
         holder.tvAppName.setCompoundDrawables(appIcon,null,null,null);
         holder.tvAppName.setCompoundDrawablePadding(15);
         holder.tvAppName.setText(appName);
+        holder.tvAppName.setTextSize(20.0f);
 
         holder.bind(packageList.get(position), listener);
 

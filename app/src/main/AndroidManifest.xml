@@ -24,8 +24,8 @@
         </activity>
         <activity android:name="com.silvermoon.rocketboard.smartfeatures.AppListActivity" />
         <activity
-            android:name="com.silvermoon.rocketboard.Preference"
-            android:theme="@style/PreferencesTheme" />
+            android:name="com.silvermoon.rocketboard.Preference"/>
+<!--            android:theme="@style/PreferencesTheme" />-->
 
         <service
             android:name="com.silvermoon.rocketboard.PCKeyboard"
@@ -45,7 +45,7 @@
 
         <provider
             android:name="com.silvermoon.rocketboard.data.SmartContentProvider"
-            android:authorities="com.silvermoon.smartkeyboard"
+            android:authorities="com.silvermoon.rocketboard"
             android:enabled="true"
             android:exported="true" />
 

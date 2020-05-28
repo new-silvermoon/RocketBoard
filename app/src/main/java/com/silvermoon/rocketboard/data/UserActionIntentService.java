@@ -21,7 +21,7 @@ public class UserActionIntentService extends IntentService {
     public static final String ACTION_UPDATE = TAG + ".UPDATE";
     public static final String EXTRA_VALUES = TAG + ".ContentValues";
     public static final String EXTRA_ARGS=TAG + ".Args";
-    private static final String MODIFY_COMPLETE_BROADCAST ="com.silvermoon.smartkeyboard.INSERTION_COMPLETE_BROADCAST";
+    private static final String MODIFY_COMPLETE_BROADCAST ="com.silvermoon.rocketboard.INSERTION_COMPLETE_BROADCAST";
 
 
 

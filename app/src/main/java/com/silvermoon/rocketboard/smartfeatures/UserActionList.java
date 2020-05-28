@@ -30,7 +30,7 @@ UserActionAdapter.OnItemClickListener,
     private Cursor cursor;
     private String queryUri = SmartKeyContract.CONTENT_URI.toString();
     private RecyclerView recyclerView;
-    private static final String MODIFY_COMPLETE_BROADCAST ="com.silvermoon.smartkeyboard.INSERTION_COMPLETE_BROADCAST";
+    private static final String MODIFY_COMPLETE_BROADCAST ="com.silvermoon.rocketboard.INSERTION_COMPLETE_BROADCAST";
     private UpdateBroadcastReceiver updateBroadcastReceiver;
     private FloatingActionButton fabMain, fabAction;
     private Boolean isFabExpanded = false;

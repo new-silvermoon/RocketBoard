@@ -20,16 +20,16 @@ public class SmartContentProvider extends ContentProvider {
     private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
     static {
-        // content://com.silvermoon.smartkeyboard/user_action
+        // content://com.silvermoon.rocketboard/user_action
         sUriMatcher.addURI(SmartKeyContract.CONTENT_AUTHORITY,
                 SmartKeyContract.TABLE_USER_ACTION,
                 USER_ACTION);
 
-        // content://com.silvermoon.smartkeyboard/user_action/key_name
+        // content://com.silvermoon.rocketboard/user_action/key_name
         sUriMatcher.addURI(SmartKeyContract.CONTENT_AUTHORITY,
                 SmartKeyContract.TABLE_USER_ACTION + "/#",
                 USER_ACTION_WITH_KEY);
-        // content://com.silvermoon.smartkeyboard/user_action/id
+        // content://com.silvermoon.rocketboard/user_action/id
         sUriMatcher.addURI(SmartKeyContract.CONTENT_AUTHORITY,
                 SmartKeyContract.TABLE_USER_ACTION + "/#",
                 USER_ACTION_WITH_ID);

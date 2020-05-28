@@ -14,6 +14,7 @@ public class UserAction {
     public String keyName;
     public int keyId;
     public String packageName;
+    public String appName;
     public int isAssigned;
 
     public UserAction(Cursor cursor){
@@ -21,6 +22,7 @@ public class UserAction {
         this.keyName = SmartKeyContract.getColumnString(cursor,UserActionColumns.keyName);
         this.keyId = SmartKeyContract.getColumnInt(cursor,UserActionColumns.keyId);
         this.packageName = SmartKeyContract.getColumnString(cursor,UserActionColumns.packageName);
+        this.appName = SmartKeyContract.getColumnString(cursor,UserActionColumns.appName);
         this.isAssigned = SmartKeyContract.getColumnInt(cursor,UserActionColumns.isAssigned);
     }
 }

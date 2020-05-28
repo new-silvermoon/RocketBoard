@@ -21,12 +21,13 @@ public class SmartKeyDBHelper extends SQLiteOpenHelper {
     }
 
     private static final String SQL_CREATE_TABLE_USER_ACTION = String.format("create table %s"
-    + " (%s integer primary key autoincrement, %s text not null, %s integer not null, %s text, %s integer not null)",
+    + " (%s integer primary key autoincrement, %s text not null, %s integer not null, %s text, %s text, %s integer not null)",
             SmartKeyContract.TABLE_USER_ACTION,
             SmartKeyContract.UserActionColumns._ID,
             SmartKeyContract.UserActionColumns.keyName,
             SmartKeyContract.UserActionColumns.keyId,
             SmartKeyContract.UserActionColumns.packageName,
+            SmartKeyContract.UserActionColumns.appName,
             SmartKeyContract.UserActionColumns.isAssigned);
 
     @Override
