@@ -42,8 +42,27 @@ public class SmartContentProvider extends ContentProvider {
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-        // Implement this to handle requests to delete one or more rows.
-        throw new UnsupportedOperationException("Not yet implemented");
+
+        int returnValue=0;
+        SQLiteDatabase sqLiteDatabase = mDbHelper.getWritableDatabase();
+
+        switch (sUriMatcher.match(uri)){
+            case USER_ACTION_WITH_ID:
+                long id  = ContentUris.parseId(uri);
+                selection = String.format("%s = ?", SmartKeyContract.UserActionColumns._ID);
+                selectionArgs = new String[]{String.valueOf(id)};
+                returnValue = sqLiteDatabase.delete(SmartKeyContract.TABLE_USER_ACTION,selection,selectionArgs);
+                break;
+
+            case UriMatcher.NO_MATCH:
+                Log.d(TAG, "NO MATCH FOR THIS URI IN SCHEME: " + uri);
+                break;
+            default:
+                Log.d(TAG, "INVALID URI - URI NOT RECOGNIZED: "  + uri);
+
+        }
+
+        return returnValue;
     }
 
     @Override

@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by Sagar_Das01 on 9/18/2017.
  */
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class AppPickerAdapter extends RecyclerView.Adapter<AppPickerAdapter.ViewHolder> {
 
     public List<PackageInfo> packageList;
     PackageInfo packageInfo;
@@ -29,7 +29,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private OnItemClickListener listener;
 
-    public RecyclerViewAdapter(List<PackageInfo> packageList,PackageManager packageManager,OnItemClickListener listener) {
+    public AppPickerAdapter(List<PackageInfo> packageList, PackageManager packageManager, OnItemClickListener listener) {
         this.packageList = packageList;
         this.packageManager = packageManager;
         this.listener = listener;
@@ -57,7 +57,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public RecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AppPickerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.list_activities_item,parent,false);

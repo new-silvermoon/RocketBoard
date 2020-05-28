@@ -82,7 +82,7 @@ UserActionAdapter.OnItemClickListener,
 
         getSupportLoaderManager().initLoader(0,null,this);
 
-        userActionAdapter = new UserActionAdapter(cursor);
+        userActionAdapter = new UserActionAdapter(cursor,this);
         recyclerView = (RecyclerView)findViewById(R.id.rvUserActionList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(userActionAdapter);

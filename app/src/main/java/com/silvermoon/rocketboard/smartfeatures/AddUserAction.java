@@ -122,7 +122,7 @@ public class AddUserAction extends AppCompatActivity implements View.OnClickList
                     }
                 }
 
-                rAdapter = new RecyclerViewAdapter(packageListNoSysApps,packageManager,new RecyclerViewAdapter.OnItemClickListener(){
+                rAdapter = new AppPickerAdapter(packageListNoSysApps,packageManager,new AppPickerAdapter.OnItemClickListener(){
                     @Override
                     public void onItemClick(PackageInfo item) {
                         //Add code here

@@ -62,7 +62,7 @@ public class AppListActivity extends AppCompatActivity {
             }
         }
 
-        rAdapter = new RecyclerViewAdapter(packageList,packageManager,new RecyclerViewAdapter.OnItemClickListener(){
+        rAdapter = new AppPickerAdapter(packageList,packageManager,new AppPickerAdapter.OnItemClickListener(){
             @Override
             public void onItemClick(PackageInfo item) {
                 //Add code here
