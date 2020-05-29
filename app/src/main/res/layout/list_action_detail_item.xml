@@ -9,7 +9,7 @@
         app:cardCornerRadius="2dp"
         app:cardElevation="5dp">
 
-        <LinearLayout
+    <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -32,4 +32,14 @@
         android:id="@+id/tvAppName"
         />
         </LinearLayout>
+    <ImageButton
+        android:id="@+id/ibDeleteAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@color/amber"
+        android:src="@drawable/ic_delete"
+        android:background="@color/white"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center_vertical|end"
+        />
 </android.support.v7.widget.CardView>
